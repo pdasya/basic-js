@@ -19,7 +19,6 @@ function repeater(inputString, options) {
   let result = '';
   let additionResult = [];
 
-  // Установка значений по умолчанию для параметров, если они не были предоставлены
   let {
     repeatTimes = 1,
     separator = '+',
@@ -28,17 +27,14 @@ function repeater(inputString, options) {
     additionSeparator = '|'
   } = options;
 
-  // Формирование строки 'addition' с учетом повторений и разделителя
   for (let j = 0; j < additionRepeatTimes; j++) {
     additionResult.push(String(addition));
   }
   let additionString = additionResult.join(additionSeparator);
 
-  // Формирование конечной строки с учетом повторений и разделителя
   for (let i = 0; i < repeatTimes; i++) {
     result += String(inputString) + additionString;
 
-    // Добавление разделителя, если это не последняя итерация
     if (i !== repeatTimes - 1) {
       result += separator;
     }
